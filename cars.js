@@ -10,9 +10,10 @@ var createCarFactory = function () {
 
   // This variable will contain the list of cars you add/sort/delete
   var store = [];
+  
 
   return {
-
+    
     /**
     * Add cars to the `store`
     * Takes an array of cars as parameters
@@ -28,6 +29,12 @@ var createCarFactory = function () {
     */
     add: function (carsArray) {
       // @TODO
+      carsArray.forEach(function(item){
+        if(item.name && item.brand && item.colour)
+        store.push(item)
+   })
+   return store.length;
+   console.log(store.length)
     },
 
     /**
@@ -35,7 +42,16 @@ var createCarFactory = function () {
      * End-point URL is available using the following variable: mockServer.url
      */
     fetchAndAdd: function (callback) {
-      // @TODO
+      fetch(mockServer)
+      .then(function(resp){
+        return resp.json
+      })
+      .then(function(json){
+        json.forEach(function(item){
+          store.push(item);
+        })
+        })
+        return store
     },
 
     /**
