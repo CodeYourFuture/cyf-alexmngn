@@ -1,3 +1,4 @@
+
 var fetch = require('node-fetch');
 var mockServer = require('./mockServer');
 
@@ -6,12 +7,21 @@ var mockServer = require('./mockServer');
  * This allows to add, fetch, sort, get and delete cars from a store
  */
 
-var createCarFactory = function () {
-
+var createCarFactory = function numberOfCars() {
   // This variable will contain the list of cars you add/sort/delete
+  
   var store = [];
+  var data = store.push(
+     {"name": "Mustang","brand": "Ford","colour": "red" },
+    { "name": "Aventador","brand": "Lamborghini","colour": "orange" },
+    { "name": "Giulietta", "brand": "Alfa Romeo","colour": "silver" },
+    {"name": "Cherokee", "brand": "Jeep", "colour": "blue"}); 
 
-  return {
+console.log(data);
+  } // In this method  i wanted to use the array. push but instead i have copied and paste the data and use the array.push
+    // i wanted to fix it but didnt have to much time.
+
+
 
     /**
     * Add cars to the `store`
@@ -28,15 +38,29 @@ var createCarFactory = function () {
     */
     add: function (carsArray) {
       // @TODO
+
+    carArrays.forEach(function(item){
+      if (item.name && item.brand && item.colour){
+        store.push(item);
+      }
+    })
+    return store.lengh;
     },
+
 
     /**
      * Fetch more cars from the server and add them to the `store` 
      * End-point URL is available using the following variable: mockServer.url
      */
-    fetchAndAdd: function (callback) {
+    fetchAndAdd : function (callback) {
       // @TODO
-    },
+      
+    fetch(mockServer.url).then(function(responsecallback) {
+     
+     console.log(responsecallback);
+     // return store.length();
+    
+    })
 
     /**
     * Get a car in `store` matching the name. Returns the first car found.
