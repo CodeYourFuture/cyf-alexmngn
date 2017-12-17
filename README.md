@@ -3,7 +3,7 @@
 This exam will allow us - and also yourself - to evaludate your current knowledge about javascript programming. No pressure, you won't get a rate for this exam. Your code will be evaluated, reviewed and you will receive a feedback from a mentor about where you've done right and where you should improve.
 So please do not cheat and do not slack/chat with your colleagues.
 
-I would ask you to avoid the use of Google/StackOverFlow etc. to find solutions and suggest you to only use the Javascript documentation from MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
+I would recommend you to avoid the use of Google or StackOverFlow to find solutions and suggest you to only use the Javascript documentation from MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
 
 You have a time limit of **1 hour** to complete this exam.
 
