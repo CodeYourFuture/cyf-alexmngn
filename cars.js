@@ -28,6 +28,15 @@ var createCarFactory = function () {
     */
     add: function (carsArray) {
       // @TODO
+
+      for(var item in carsArray){
+        if (carsArray[item].name && carsArray[item].brand && carsArray[item].colour){
+            store.push(carsArray[item]);
+        }
+             
+      }
+      return store.length
+    
     },
 
     /**
@@ -36,6 +45,9 @@ var createCarFactory = function () {
      */
     fetchAndAdd: function (callback) {
       // @TODO
+    
+      fetch(mockServer.url).then(callback);
+      
     },
 
     /**
@@ -55,6 +67,9 @@ var createCarFactory = function () {
     */
     getAll: function () {
       // @TODO
+
+      return  store;
+      
     },
 
     /**
@@ -62,6 +77,12 @@ var createCarFactory = function () {
     */
     sortByBrand: function () {
       // @TODO
+    
+        
+      store.sort(function(a, b) {
+        return a.brand - b.brand;
+      });
+      return store;
     },
 
     /**
