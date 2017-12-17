@@ -3,7 +3,7 @@
 This exam will allow us - and also yourself - to evaludate your current knowledge about javascript programming. No pressure, you won't get a rate for this exam. Your code will be evaluated, reviewed and you will receive a feedback from a mentor about where you've done right and where you should improve.
 So please do not cheat and do not slack/chat with your colleagues.
 
-I would ask you to avoid the use of Google/StackOverFlow etc. to find solutions and suggest you to only use the Javascript documentation from MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
+I would recommend you to avoid the use of Google or StackOverFlow to find solutions and suggest you to only use the Javascript documentation from MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
 
 You have a time limit of **1 hour** to complete this exam.
 
@@ -39,7 +39,7 @@ The goals are to make sure all methods are working. When a method has been prope
 Fork and clone this repository to your computer and install the packages with `npm`:
 
 ```
-git clone https://github.com/CodeYourFuture/js-exam-1
+git clone https://github.com/[YOUR_NAME]/js-exam-1
 cd js-exam-1
 npm install
 ```
@@ -49,6 +49,12 @@ You can run the following command to run the unit tests:
 
 ```
 npm test
+```
+
+To run and watch:
+
+```
+npm test -- --watch
 ```
 
 ## Submit your solution
