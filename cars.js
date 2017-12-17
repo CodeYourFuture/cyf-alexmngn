@@ -10,7 +10,7 @@ var createCarFactory = function () {
 
   // This variable will contain the list of cars you add/sort/delete
   var store = [];
-
+  
   return {
 
     /**
@@ -20,7 +20,8 @@ var createCarFactory = function () {
     * - name: Car's name
     * - brand: Car's brand
     * - colour: Car's colour
-    * If one of those properties is missing in one of the car within the array, the car shouldn't be added.
+    * If one of those properties is missing in one of the car 
+    within the array, the car shouldn't be added.
     * @param {array} carsArray
     *
     * The function returns the following:
@@ -28,6 +29,12 @@ var createCarFactory = function () {
     */
     add: function (carsArray) {
       // @TODO
+       carsArray.forEach(function(element){
+        if(element.name && element.brand && element.colour){
+            store.push(element); // [[{ name:  ,brand:   ,colour:  }]]
+            }
+      })
+      return store.length;
     },
 
     /**
@@ -36,6 +43,10 @@ var createCarFactory = function () {
      */
     fetchAndAdd: function (callback) {
       // @TODO
+      fetch(fetch).then(function(){
+        return store.push(mockServer);
+        
+      })
     },
 
     /**
