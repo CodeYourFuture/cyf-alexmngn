@@ -8,6 +8,7 @@ var mockServer = require('./mockServer');
 
 var createCarFactory = function () {
 
+
   // This variable will contain the list of cars you add/sort/delete
   var store = [];
 
@@ -27,7 +28,14 @@ var createCarFactory = function () {
     * @returns {number} Total number of cars stored
     */
     add: function (carsArray) {
+      carsArray.forEach(function(response){
+        if (response.name && response.brond && response.color){
+          store.push(response)
+        }
+      });
+     
       // @TODO
+
     },
 
     /**
@@ -35,7 +43,13 @@ var createCarFactory = function () {
      * End-point URL is available using the following variable: mockServer.url
      */
     fetchAndAdd: function (callback) {
+      fetch(mockServer.url)
+      .then(cars).forEach(function(element) {
+       return cars.push(element)
+    });
+      
       // @TODO
+      return fetch(element)
     },
 
     /**
