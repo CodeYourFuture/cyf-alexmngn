@@ -28,7 +28,14 @@ var createCarFactory = function () {
     */
     add: function (carsArray) {
       // @TODO
-    },
+      carsArray.forEach(function(el) {
+        if (el.name && el.brand && el.colour) {
+          store.push(el);
+        }
+      });
+      console.log(store);
+      return store.length; 
+  },
 
     /**
      * Fetch more cars from the server and add them to the `store` 
@@ -36,6 +43,14 @@ var createCarFactory = function () {
      */
     fetchAndAdd: function (callback) {
       // @TODO
+    
+      fetch(mockServer.url)
+      .then(response => response.json())
+      .then(function(result) {
+        return result;
+      });
+
+
     },
 
     /**
