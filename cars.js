@@ -28,6 +28,10 @@ var createCarFactory = function () {
     */
     add: function (carsArray) {
       // @TODO
+      for(var i=0; i<carsArray.length; i++){
+      store.push(carsArray[i])
+      }
+      return store.length
     },
 
     /**
@@ -36,6 +40,17 @@ var createCarFactory = function () {
      */
     fetchAndAdd: function (callback) {
       // @TODO
+      fetch(mockServer.url)
+      .then(callback => {
+        callback.forEach(function(xx){
+          return store.push(xx)
+
+        })
+
+      }) 
+      
+      
+
     },
 
     /**
