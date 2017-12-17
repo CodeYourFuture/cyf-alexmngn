@@ -39,7 +39,7 @@ The goals are to make sure all methods are working. When a method has been prope
 Fork and clone this repository to your computer and install the packages with `npm`:
 
 ```
-git clone https://github.com/CodeYourFuture/js-exam-1
+git clone https://github.com/[YOUR_NAME]/js-exam-1
 cd js-exam-1
 npm install
 ```
