@@ -27,7 +27,12 @@ var createCarFactory = function () {
     * @returns {number} Total number of cars stored
     */
     add: function (carsArray) {
-      // @TODO
+      carsArray.forEach(function(car){
+        if(car.name && car.brand && car.colour){
+          store.push(car);
+        }
+      });
+      return store.length;
     },
 
     /**
@@ -36,6 +41,16 @@ var createCarFactory = function () {
      */
     fetchAndAdd: function (callback) {
       // @TODO
+      console.log("====================")
+      // var moreCars = mockServer.url;
+      fetch(mockServer)
+      .then(response => response.json())
+      .then(console.log(mockServer.data))
+      .
+      // callback.add(mockServer.data)
+      // function addMoreCars(mockServer.data){
+      //   add(mockServer)
+      // }
     },
 
     /**
