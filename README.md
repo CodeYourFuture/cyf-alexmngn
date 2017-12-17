@@ -51,6 +51,12 @@ You can run the following command to run the unit tests:
 npm test
 ```
 
+To run and watch:
+
+```
+npm test -- --watch
+```
+
 ## Submit your solution
 
 Don't forget to commit your code often. Once it's ready, create a pull request with your solution. 
