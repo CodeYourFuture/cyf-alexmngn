@@ -28,7 +28,14 @@ var createCarFactory = function () {
     */
     add: function (carsArray) {
       // @TODO
-    },
+      carsArray.forEach(function(el) {
+        if (el.name && el.brand && el.colour) {
+          store.push(el);
+        }
+      });
+      // console.log('-------------------------');
+      return store.length; 
+  },
 
     /**
      * Fetch more cars from the server and add them to the `store` 
@@ -36,6 +43,15 @@ var createCarFactory = function () {
      */
     fetchAndAdd: function (callback) {
       // @TODO
+      var add = this.add;
+      return fetch(mockServer.url)
+      .then(response => response.json())
+      .then(function(responseJSON) {
+       var numberOfCars = add(responseJSON);
+       callback(numberOfCars);
+      });
+
+
     },
 
     /**
@@ -55,6 +71,7 @@ var createCarFactory = function () {
     */
     getAll: function () {
       // @TODO
+      return store;
     },
 
     /**
@@ -62,26 +79,41 @@ var createCarFactory = function () {
     */
     sortByBrand: function () {
       // @TODO
+      store.sort(function(a,b){
+    var nameA=a.brand.toLowerCase(), nameB=b.brand.toLowerCase()
+      if (nameA < nameB) {//sort string ascending
+        return -1
+      };
+      if (nameA > nameB) {
+        return 1
+      };
+      if (nameA === nameB) {
+        return 0 
+      };
+      });    
     },
 
     /**
     * Delete all cars in `store` that has the `colour` prop matching with a car's colour
     * @TODO: This method is not properly working, you must fix it.
     * @param {string} colour
-    * @returns {boolean} true if at least one car if found and deleted, false if no car has been found with the matching colour
+    * @returns {boolean} true if at least one car if found and deleted, false if no car 
+    has been found with the matching colour
     */
     deleteByColour: function (colour) {
       var hasBeenDeleted = false;
-      store.filter(function(item) {
+      store = store.filter(function(item) {
         if (item.colour === colour) {
           hasBeenDeleted = true;
           return false;
         }
         return true;
       });
+      console.log(store);
       return hasBeenDeleted;
     },
   };
 };
+
 
 module.exports = createCarFactory;

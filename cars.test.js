@@ -64,11 +64,20 @@ describe('Cars', function () {
   });
 
   it('Can get a car by its name', function () {
-    expect.assertions(2);
+     var listOfCars = [
+      { name: 'Mustang', brand: 'Ford', colour: 'red' },
+      { name: 'Cherokee', brand: 'Jeep', colour: 'blue' },
+      { name: 'Camaro', brand: 'Porsche', colour: 'green' },
+    ];
+    carFactory.add(listOfCars);
+   var carByName = carFactory.getByName('Mustang');
+    var noCarByName = carFactory.getByName('Anything');
+   expect(carByName).toEqual({ name: 'Mustang', brand: 'Ford', colour: 'red' });
+   expect(noCarByName).toEqual(undefined);
 
     // @TODO: Write the unit test to make sure you can get a specific car by its name
     // You should also make sure the method returns `undefined` if there is no car found
-    
+     expect.assertions(2);
   });
 
   it('Can sort the store by brand', function () {
